@@ -58,13 +58,27 @@ Extract the current kernel configuration:
 Then add T2 drivers by running:
 
 ```bash
-make olddefconfig
 scripts/config --module CONFIG_BT_HCIBCM4377
 scripts/config --module CONFIG_HID_APPLETB_BL
 scripts/config --module CONFIG_HID_APPLETB_KBD
 scripts/config --module CONFIG_DRM_APPLETBDRM
 scripts/config --module CONFIG_APPLE_BCE
 scripts/config --module CONFIG_APFS_FS
+scripts/config --module CONFIG_MFD_MACSMC
+scripts/config --module CONFIG_MFD_MACSMC_CORE
+scripts/config --module CONFIG_MACSMC_RTKIT
+scripts/config --module CONFIG_MACSMC_ACPI
+scripts/config --module CONFIG_MACSMC_LIGHT
+scripts/config --module CONFIG_BACKLIGHT_MACSMC
+scripts/config --module CONFIG_MACSMC_BATTERY
+scripts/config --module CONFIG_MACSMC_ACCEL
+scripts/config --module CONFIG_INPUT_MACSMC_CHAMSHELL
+scripts/config --module CONFIG_SENSORS_MACSMC_HWMON
+scripts/config --module CONFIG_RTC_DRV_MACSMC
+scripts/config --module CONFIG_MACSMC_POWER
+scripts/config --enable CONFIG_APPLE_BRIGHTNESS
+scripts/config --disable CONFIG_SENSORS_APPLESMC
+make olddefconfig
 ```
 
 ### Building
